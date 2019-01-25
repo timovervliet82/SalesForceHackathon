@@ -10,7 +10,6 @@ public class LoginPageObject {
     By fld_password = By.cssSelector("[id='password']");
     By btn_login = By.cssSelector("[id='Login']");
 
-
     public LoginPageObject (WebDriver driver){
         this.driver = driver;
     }
@@ -20,15 +19,14 @@ public class LoginPageObject {
     }
 
     private void setPassword(String password){
-        driver.findElement(fld_username).sendKeys(password);
+        driver.findElement(fld_password).sendKeys(password);
     }
 
     private void clickLogin(){
         driver.findElement(btn_login).click();
-
     }
 
-    private void loginUser(String username, String password){
+    public void loginUser(String username, String password){
         setUsername(username);
         setPassword(password);
         clickLogin();

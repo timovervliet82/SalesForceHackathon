@@ -2,7 +2,7 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-public class SalesScenario extends DriverManager{
+public class SalesScenario {
 
     WebDriver driver = DriverManager.driver;
 
