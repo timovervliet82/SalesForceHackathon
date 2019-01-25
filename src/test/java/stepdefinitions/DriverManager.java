@@ -9,14 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DriverManager {
 
-    protected static WebDriver driver;
+    public static WebDriver driver;
 
     @Before
     public static void setup(){
         ChromeDriverManager.getInstance().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.rabobank.nl");
+        driver.get("https://login.salesforce.com/");
     }
 
     @After
