@@ -2,27 +2,30 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.Assert.assertTrue;
+
 public class HomePage {
     private WebDriver driver;
 
-    private By contactPersonMenu = By.cssSelector("a[title='Contactpersonen'] + one-app-nav-bar-item-dropdown");
+    private By contactPersonMenu = By.cssSelector("li[data-id='Contact']");
 
-    private By addContactPerson = By.xpath("(.//*[@data-key='add'])[4]");
+    WebDriverWait wait;
 
     public HomePage (WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver,30);
+    }
+
+    public void validateHomePage() {
+        assertTrue("Home page not located", wait.until(ExpectedConditions.elementToBeClickable(contactPersonMenu)).isDisplayed());
     }
 
     public void createNewContact(){
-        driver.findElement(contactPersonMenu).click();
-        WebDriverWait wait = new WebDriverWait(driver,30);
-        WebElement addContactelement = wait.until(ExpectedConditions.elementToBeClickable(addContactPerson));
-        addContactelement.click();
+        wait.until(ExpectedConditions.elementToBeClickable(contactPersonMenu)).click();
     }
 }
