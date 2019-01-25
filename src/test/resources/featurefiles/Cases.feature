@@ -1,7 +1,7 @@
 Feature: Test SalesForce cases page
 
   Background:
-    Given I am logged into SalesForce
+    Given the user is logged into SalesForce
 
   Scenario: Test priority sorting
     Given user wants to get an overview of all open cases

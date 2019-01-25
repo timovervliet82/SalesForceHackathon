@@ -28,7 +28,7 @@ public class LoginPageObject {
 
     }
 
-    private void loginUser(String username, String password){
+    public void loginUser(String username, String password){
         setUsername(username);
         setPassword(password);
         clickLogin();
