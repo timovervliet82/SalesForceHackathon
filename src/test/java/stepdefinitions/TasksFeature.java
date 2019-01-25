@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -27,5 +28,20 @@ public class TasksFeature extends  SalesScenario{
     @And("^the task is assigned to \"([^\"]*)\"$")
     public void theTaskIsAssignedTo(String assignTo){
         newTask.taskAssignTo(assignTo);
+    }
+
+    @And("^the task subject is \"([^\"]*)\"$")
+    public void theTaskSubjectIs(String subject){
+       newTask.taskSubject(subject);
+    }
+
+    @And("^the task contact person is \"([^\"]*)\"$")
+    public void theTaskContactPersonIs(String contact){
+
+    }
+
+    @When("^I submit the task$")
+    public void iSubmitTheTask() {
+
     }
 }

@@ -33,7 +33,7 @@ public class DriverManager {
 
     @After
     public static void tearDown(){
-        driver.quit();
+//        driver.quit();
     }
 
 }
