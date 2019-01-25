@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 
 public class SalesScenario {
 
-    WebDriver driver = DriverManager.driver;
+    static WebDriver driver = DriverManager.driver;
 
-    public WebDriver getDriver(){
+    public static WebDriver getDriver(){
         return driver;
     }
+
+
 
 
 }
