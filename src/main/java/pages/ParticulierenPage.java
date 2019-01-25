@@ -12,7 +12,6 @@ public class ParticulierenPage {
 
     private WebDriver driver;
     private int timeOut = 5;
-
     private By hypotheekLink = By.xpath("//a[contains(text(), 'Hypotheek')]");
 
     private By searchField = By.id ("ra_searchfield");
