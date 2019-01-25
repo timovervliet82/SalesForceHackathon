@@ -17,8 +17,6 @@ public class StepDefinitions extends SalesScenario{
 
     @Given("^the user is logged into SalesForce$")
     public void userOpensOverviewCasesPage() {
-        loginPageObject =  new LoginPageObject(driver);
-        loginPageObject.loginUser("Hackathon7@mailinator.com","Valori2019");
     }
 
 

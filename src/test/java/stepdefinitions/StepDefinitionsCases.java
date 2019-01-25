@@ -23,7 +23,7 @@ public class StepDefinitionsCases {
     }
 
     @When("^the user wants to sort the open cases by high priority$")
-    public void userSortsTheCasesOverview() {
+    public void userSortsTheCasesOverview() throws InterruptedException {
         casePage = new CasePage(driver);
         casePage.filterCasesToAllOpenCases();
         casePage.waitForTableToBePopulated();
@@ -31,8 +31,9 @@ public class StepDefinitionsCases {
     }
 
     @Then("^the user gets an sorted overview sorted by high priority")
-    public void userSeesSortedOverview() {
-
+    public void userSeesSortedOverview()  throws InterruptedException {
+        casePage = new CasePage(driver);
+        assertTrue(casePage.isPrioritySorted());
     }
 }
 
