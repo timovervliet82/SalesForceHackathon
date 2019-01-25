@@ -37,11 +37,12 @@ public class TasksFeature extends  SalesScenario{
 
     @And("^the task contact person is \"([^\"]*)\"$")
     public void theTaskContactPersonIs(String contact){
-
+        newTask.taskContact(contact);
     }
 
     @When("^I submit the task$")
     public void iSubmitTheTask() {
+        newTask.taskSave();
 
     }
 }

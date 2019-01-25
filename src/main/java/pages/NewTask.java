@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Wait;
 
 public class NewTask {
 
@@ -31,13 +32,25 @@ public class NewTask {
     }
 
     public void taskContact(String contact){
-        driver.findElement(fld_contact).sendKeys(contact + Keys.ENTER);
-        driver.findElement(By.cssSelector("a[title="+ contact+"]")).click();
+        driver.findElement(fld_contact).sendKeys(contact);
+        waitNow();
+        driver.findElement(fld_contact).sendKeys(Keys.ENTER);
+        waitNow();
+
+        driver.findElement(By.cssSelector("a[title='"+ contact+"']")).click();
 
     }
 
     public void taskSave(){
-        driver.findElement(btn_save).click();
+        WaitAction.waitForElement(driver, btn_save).click();
+    }
+
+    private void waitNow(){
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
