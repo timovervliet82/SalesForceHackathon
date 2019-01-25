@@ -33,21 +33,23 @@ public class NewTask {
 
     public void taskContact(String contact){
         driver.findElement(fld_contact).sendKeys(contact);
-        waitNow();
+        waitNow(1500);
         driver.findElement(fld_contact).sendKeys(Keys.ENTER);
-        waitNow();
+        waitNow(1500);
 
         driver.findElement(By.cssSelector("a[title='"+ contact+"']")).click();
 
     }
 
     public void taskSave(){
+
+        waitNow(2000);
         WaitAction.waitForElement(driver, btn_save).click();
     }
 
-    private void waitNow(){
+    private void waitNow(int time){
         try {
-            Thread.sleep(1500);
+            Thread.sleep(time);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
